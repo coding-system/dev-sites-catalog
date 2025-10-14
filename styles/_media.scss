@@ -1,0 +1,35 @@
+@media (1920px <= width) {
+   .portfolio__preview-content {
+      width: 1920px;
+      height: 1080px;
+      transform: scale(0.8);
+      &--fhd {
+         width: 1920px;
+         height: 1080px;
+         transform: scale(0.8);
+      }
+      &--2k {
+         width: 2560px;
+         height: 1440px;
+         transform: scale(0.6);
+      }
+   }
+}
+
+@media (2560px <= width) {
+   .portfolio__preview-content {
+      width: 1920px;
+      height: 1080px;
+      transform: scale(1.067);
+      &--fhd {
+         width: 1920px;
+         height: 1080px;
+         transform: scale(1.068);
+      }
+      &--2k {
+         width: 2560px;
+         height: 1440px;
+         transform: scale(0.8);
+      }
+   }
+}

@@ -1,0 +1,442 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Hanunoo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+Hanunoo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Tiny5&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  color: currentColor;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter-Variable";
+  src: local("Inter-Variable"), url("../assets/fonts/Inter-Variable.woff2") format("woff2 supports variations"), url("../assets/fonts/Inter-Variable.woff2") format("woff2-variations");
+  font-weight: 400 800;
+}
+@font-face {
+  font-family: "Trajanpro";
+  src: local("trajanpro_bold.otf");
+  src: url("../assets/fonts/trajanpro_bold.otf") format("otf");
+  font-weight: bold;
+}
+html {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.body {
+  color: #f0f0f0;
+  background-color: rgb(92, 92, 92);
+  background-image: linear-gradient(#1f1f1f, #2c2c2c);
+  font-family: "Inter-Variable";
+  font-weight: 400;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio {
+  box-shadow: -0.3em -0.3em 0.5em rgba(0, 0, 0, 0.5568627451), 0.3em 0.3em 0.5em rgba(255, 255, 255, 0.5568627451);
+  background-color: #fff;
+  position: relative;
+  margin: auto;
+  width: 80%;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 1em;
+}
+.portfolio__bar {
+  max-height: 3.8em;
+  font-size: 1rem;
+  background-image: linear-gradient(#d6d5d7, #ededee);
+  min-height: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  padding: 0.5em;
+  position: relative;
+}
+.portfolio__bar::before {
+  z-index: 10;
+  position: absolute;
+  bottom: -0.4em;
+  left: 0;
+  content: "";
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1294117647), transparent);
+  width: 100%;
+  height: 0.4em;
+}
+.portfolio__buttons {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  flex: 0 auto; /* Или flex: none */
+  gap: 4em;
+}
+.portfolio__buttons-circles {
+  display: flex;
+  gap: 1.2em;
+  padding-left: 1em;
+}
+.portfolio__buttons-circles-item {
+  font-size: 1em;
+  display: flex;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0.2em rgba(0, 0, 0, 0.3411764706);
+  transition: all 0.1s ease;
+}
+.portfolio__buttons-circles-red {
+  background-color: #ff5f57;
+}
+.portfolio__buttons-circles-red:hover {
+  background-color: #d9534f;
+}
+.portfolio__buttons-circles-yellow {
+  background-color: #ffbd2e;
+}
+.portfolio__buttons-circles-yellow:hover {
+  background-color: #d9a026;
+}
+.portfolio__buttons-circles-green {
+  background-color: #28c840;
+}
+.portfolio__buttons-circles-green:hover {
+  background-color: #1aab29;
+}
+.portfolio__buttons-arrows {
+  font-size: 1rem;
+  display: flex;
+  gap: 0.2em;
+}
+.portfolio__buttons-arrows-item {
+  background-image: linear-gradient(#fdfdfd, #f1f1f1);
+  border: 1px solid rgba(0, 0, 0, 0.2117647059);
+  padding: 0.5em 0.7em;
+  color: #1b1b1b;
+  font-size: 1.3em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portfolio__buttons-arrows-item span {
+  font-size: 1em;
+}
+.portfolio__buttons-arrows-item:hover {
+  color: #3390ff;
+  background-image: linear-gradient(#e2e2e2, #cecece);
+}
+.portfolio__buttons-arrows-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-image: linear-gradient(#f7f7f7, #e0e0e0);
+  pointer-events: none;
+}
+.portfolio__buttons-arrows-disabled:hover {
+  color: #1b1b1b;
+  background-image: linear-gradient(#f7f7f7, #e0e0e0);
+}
+.portfolio__data {
+  font-family: "Inter-Variable";
+  position: relative;
+  padding: 0.2em 0.25em;
+  flex-grow: 1; /* Занимает всю оставшуюся ширину */
+  display: flex;
+  justify-content: space-between; /* Если нужно разнести элементы */
+  align-items: center;
+  font-size: 1.4em;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 0.5em;
+  background-image: linear-gradient(#fdfdfd, #f1f1f1);
+  border: 1px solid rgba(0, 0, 0, 0.2117647059);
+  color: #1b1b1b;
+}
+.portfolio__data:hover {
+  background-image: linear-gradient(#f1f1f1, #ececec);
+}
+.portfolio__data:hover .portfolio__data-link,
+.portfolio__data:hover .portfolio__data-favorit {
+  background-color: #d8d8d8;
+}
+.portfolio__data-link {
+  position: relative;
+  background-color: #ebebeb;
+  padding: 0.1em 0.4em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.portfolio__data-link:hover {
+  background-color: #303030 !important;
+  color: #3390ff;
+}
+.portfolio__data-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.portfolio__data-refresh {
+  background-color: #ebebeb;
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  color: #838383;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.portfolio__data-refresh span {
+  transform: rotate(-45deg);
+  transition: transform 0s ease;
+}
+.portfolio__data-refresh span.refreshed {
+  transform: rotate(675deg);
+  transition: transform 1.5s ease;
+}
+.portfolio__data-refresh:hover {
+  background-color: #303030 !important;
+  color: #3390ff;
+}
+.portfolio__data-refresh span {
+  font-size: 1em;
+}
+.portfolio__preview {
+  flex-grow: 1;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.portfolio__preview-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  border: none;
+  z-index: 6;
+  background-color: #fff;
+}
+.portfolio__preview-content--fhd {
+  width: 1920px;
+  height: 1080px;
+  transform: scale(0.8);
+}
+.portfolio__preview-content--2k {
+  width: 2560px;
+  height: 1440px;
+  transform: scale(0.6);
+}
+
+.resolution {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.switch {
+  --_switch-bg-clr: #70a9c5;
+  --_switch-padding: 4px; /* padding around button*/
+  --_slider-bg-clr: rgba(12, 74, 110, 0.65); /* slider color unchecked */
+  --_slider-bg-clr-on: rgba(12, 74, 110, 1); /* slider color checked */
+  --_slider-txt-clr: #ffffff;
+  --_label-padding: 1rem 2rem; /* padding around the labels -  this gives the switch it's global width and height */
+  --_switch-easing: cubic-bezier(
+     0.47,
+     1.64,
+     0.41,
+     0.8
+  ); /* easing on toggle switch */
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: relative;
+  isolation: isolate;
+}
+
+.switch input[type=checkbox] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.switch > span {
+  display: grid;
+  place-content: center;
+  transition: opacity 300ms ease-in-out 150ms;
+  padding: var(--_label-padding);
+}
+
+.switch::before,
+.switch::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  transition: inset 150ms ease-in-out;
+}
+
+/* switch slider */
+.switch::before {
+  background-color: var(--_slider-bg-clr);
+  inset: var(--_switch-padding) 50% var(--_switch-padding) var(--_switch-padding);
+  transition: inset 500ms var(--_switch-easing), background-color 500ms ease-in-out;
+  z-index: -1;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.3);
+}
+
+/* switch bg color */
+.switch::after {
+  background-color: var(--_switch-bg-clr);
+  inset: 0;
+  z-index: -2;
+}
+
+/* switch hover & focus */
+.switch:focus-within::after {
+  inset: -0.25em;
+}
+
+.switch:has(input:checked):hover > span:first-of-type,
+.switch:has(input:not(:checked)):hover > span:last-of-type {
+  opacity: 1;
+  transition-delay: 0ms;
+  transition-duration: 100ms;
+}
+
+/* switch hover */
+/* checked - move slider to right */
+.switch:has(input:checked)::before {
+  background-color: var(--_slider-bg-clr-on);
+  inset: var(--_switch-padding) var(--_switch-padding) var(--_switch-padding) 50%;
+}
+
+/* checked - set opacity */
+.switch > span:last-of-type,
+.switch > input:checked + span:first-of-type {
+  opacity: 0.75;
+}
+
+.switch > input:checked ~ span:last-of-type {
+  opacity: 1;
+}
+
+@media (1920px <= width) {
+  .portfolio__preview-content {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.8);
+  }
+  .portfolio__preview-content--fhd {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(0.8);
+  }
+  .portfolio__preview-content--2k {
+    width: 2560px;
+    height: 1440px;
+    transform: scale(0.6);
+  }
+}
+@media (2560px <= width) {
+  .portfolio__preview-content {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(1.067);
+  }
+  .portfolio__preview-content--fhd {
+    width: 1920px;
+    height: 1080px;
+    transform: scale(1.068);
+  }
+  .portfolio__preview-content--2k {
+    width: 2560px;
+    height: 1440px;
+    transform: scale(0.8);
+  }
+}
