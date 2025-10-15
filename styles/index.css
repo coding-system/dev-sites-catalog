@@ -63,7 +63,7 @@ ol {
   font-display: swap;
   font-family: "Inter-Variable";
   src: local("Inter-Variable"), url("../assets/fonts/Inter-Variable.woff2") format("woff2 supports variations"), url("../assets/fonts/Inter-Variable.woff2") format("woff2-variations");
-  font-weight: 400 800;
+  font-weight: 100 800;
 }
 @font-face {
   font-family: "Trajanpro";
@@ -79,7 +79,7 @@ html {
 .body {
   color: #f0f0f0;
   background-color: rgb(92, 92, 92);
-  background-image: linear-gradient(#1f1f1f, #2c2c2c);
+  background-image: linear-gradient(#636363, #3f3f3f);
   font-family: "Inter-Variable";
   font-weight: 400;
   display: flex;
@@ -94,14 +94,47 @@ html {
   box-shadow: -0.3em -0.3em 0.5em rgba(0, 0, 0, 0.5568627451), 0.3em 0.3em 0.5em rgba(255, 255, 255, 0.5568627451);
   background-color: #fff;
   position: relative;
+  top: -1em;
   margin: auto;
   width: 80%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border-radius: 1em;
+}
+.portfolio::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-image: linear-gradient(#0f0f0f, #111111);
+  width: calc(100% + 2em);
+  height: calc(100% + 4em);
+  transform: translate(-1em, -1em);
+  z-index: 0;
+  border-radius: 2em;
+}
+.portfolio::after {
+  content: "MrakBook Air";
+  position: absolute;
+  bottom: -1.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-family: "Inter-Variable";
+  font-size: 1.6em;
+  font-weight: 200;
+  z-index: 10;
+  letter-spacing: -0.01em;
+  opacity: 0.7;
+}
+.portfolio__screen {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  position: relative;
   border-radius: 1em;
 }
 .portfolio__bar {
